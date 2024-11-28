@@ -12,10 +12,24 @@ ComfyUI nodes for video object segmentation using [SAMURAI](https://github.com/y
 ```
 cd ComfyUI/custom_nodes
 
-git clone https://github.com/your-username/samurai_nodes.git
+git clone https://github.com/takemetosiberia/ComfyUI-SAMURAI--SAM2-.git samurai_nodes
 ```
 
-3. Copy the SAMURAI folder into `ComfyUI/custom_nodes/samurai_nodes/`
+3. After installation, your directory structure should look like this:
+
+```
+ComfyUI/
+└── custom_nodes/
+    └── samurai_nodes/
+        ├── samurai/     # SAMURAI model installation
+        ├── init.py      # Module initialization
+        ├── samurai_node.py
+        └── utils.py
+```
+
+Make sure the SAMURAI model is properly installed in the `samurai/` directory.
+
+
 4. Download model weights as described in [SAMURAI guide](https://github.com/yangchris11/samurai)
 
 ## Additional Dependencies
