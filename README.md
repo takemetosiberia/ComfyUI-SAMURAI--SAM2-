@@ -26,7 +26,7 @@ git clone https://github.com/takemetosiberia/ComfyUI-SAMURAI--SAM2-.git samurai_
 
 4. Download model weights as described in [SAMURAI guide](https://github.com/yangchris11/samurai)
 
-5. ## Project Structure
+## Project Structure
 
 After installation, your directory structure should look like this:
 
