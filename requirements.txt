@@ -1,0 +1,8 @@
+loguru
+hydra-core
+omegaconf
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.20.0
+pillow>=8.0.0
+opencv-python>=4.5.0

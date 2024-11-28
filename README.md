@@ -1,5 +1,3 @@
-# ComfyUI-SAMURAI--SAM2-
-This is my version of nodes based on SAMURAI project. The project is made for entertainment purposes, I will not be engaged in further development and improvement.  The project is based on official implementation of SAMURAI: Adapting Segment Anything Model for Zero-Shot Visual Tracking with Motion-Aware Memory
 # SAMURAI Nodes for ComfyUI
 
 ComfyUI nodes for video object segmentation using [SAMURAI](https://github.com/yangchris11/samurai) model.
@@ -9,36 +7,21 @@ ComfyUI nodes for video object segmentation using [SAMURAI](https://github.com/y
 1. Follow the [SAMURAI installation guide](https://github.com/yangchris11/samurai) to install the base model
 2. Clone this repository into your ComfyUI custom nodes directory:
 
-```
+bash
+
 cd ComfyUI/custom_nodes
 
-git clone https://github.com/takemetosiberia/ComfyUI-SAMURAI--SAM2-.git samurai_nodes
-```
+git clone https://github.com/your-username/samurai_nodes.git
 
-3. After installation, your directory structure should look like this:
-
-```
-ComfyUI/
-└── custom_nodes/
-    └── samurai_nodes/
-        ├── samurai/     # SAMURAI model installation
-        ├── init.py      # Module initialization
-        ├── samurai_node.py
-        └── utils.py
-```
-
-Make sure the SAMURAI model is properly installed in the `samurai/` directory.
-
-
+3. Copy the SAMURAI installation into `ComfyUI/custom_nodes/samurai_nodes/samurai`
 4. Download model weights as described in [SAMURAI guide](https://github.com/yangchris11/samurai)
 
 ## Additional Dependencies
 
 Most dependencies are included with SAMURAI installation. Additional required packages:
 
-```
+bash
 pip install hydra-core omegaconf loguru
-```
 
 ## Usage
 
