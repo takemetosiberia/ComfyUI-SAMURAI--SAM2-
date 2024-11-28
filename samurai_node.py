@@ -9,12 +9,12 @@ import cv2
 import gc
 import tempfile
 
-# Обновляем путь к sam2
+
 SAM2_PATH = os.path.join(os.path.dirname(__file__), "samurai", "sam2", "sam2")
 if SAM2_PATH not in sys.path:
     sys.path.insert(0, SAM2_PATH)
 
-# Обновляем путь к utils
+
 UTILS_PATH = os.path.join(SAM2_PATH, "utils")
 if UTILS_PATH not in sys.path:
     sys.path.insert(0, UTILS_PATH)
@@ -44,7 +44,7 @@ class SAMURAIBoxInputNode:
             }
         }
     
-    RETURN_TYPES = ("BOX", "START_FRAME")  # Изменили INT на START_FRAME
+    RETURN_TYPES = ("BOX", "START_FRAME")  
     FUNCTION = "get_box"
     CATEGORY = "SAMURAI"  
     DESCRIPTION = """# SAMURAI Box Input Node
@@ -68,13 +68,13 @@ This node allows you to select a region of interest (box) in the first frame of 
 
     def get_box(self, image, start_frame=0, refresh_input=0):
         print(f"Getting box for frame {start_frame} (refresh state: {refresh_input})")
-        # Подготовка изображения
+        
         frame = image[start_frame].cpu().numpy()
         frame = (frame * 255).astype(np.uint8)
         frame = np.ascontiguousarray(frame)
         frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
         
-        # Создаем новое окно каждый раз с уникальным именем
+        
         window_name = f'Select Box - Frame {start_frame} (Refresh: {refresh_input}) - Press ENTER when done, ESC to cancel'
         cv2.destroyAllWindows()
         cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
@@ -82,7 +82,7 @@ This node allows you to select a region of interest (box) in the first frame of 
         cv2.destroyAllWindows()
         
         cleanup_memory()
-        return (box, start_frame)  # Возвращаем и box, и start_frame
+        return (box, start_frame)  
 
 class SAMURAIPointsInputNode:
     @classmethod
@@ -105,7 +105,7 @@ class SAMURAIPointsInputNode:
             }
         }
     
-    RETURN_TYPES = ("POINTS", "LABELS", "START_FRAME")  # INT для start_frame
+    RETURN_TYPES = ("POINTS", "LABELS", "START_FRAME")  
     FUNCTION = "get_points"
     CATEGORY = "SAMURAI"
     DESCRIPTION = """# SAMURAI Points Input Node
@@ -135,11 +135,11 @@ This node allows you to select points of interest in the first frame of a video 
 
     def get_points(self, image, start_frame=0, refresh_input=0):
         frame = image[start_frame].cpu().numpy()
-        # ... остальной код ...
+        
         return (points_array, labels_array, start_frame)
 
     def get_points(self, image, start_frame=0, refresh_input=0):
-        # Подготовка изображения
+        
         frame = image[start_frame].cpu().numpy()
         frame = (frame * 255).astype(np.uint8)
         frame = np.ascontiguousarray(frame)
@@ -338,15 +338,15 @@ This node performs video object segmentation using the SAMURAI model.
         
         self.predictor.add_new_points_or_box = patched_method
         
-        # Обрезаем видео с start_frame
+        
         image = image[start_frame:]
         num_frames = len(image)
         print(f"Processing video from frame {start_frame}, total frames to process: {num_frames}")
         
-        # Получаем размеры уже обрезанного видео
+        
         num_frames, h, w, c = image.shape
         
-        # Ресайз если нужно
+       
         max_side = max(h, w)
         if max_side > resolution:
             scale = resolution / max_side
@@ -420,7 +420,7 @@ This node performs video object segmentation using the SAMURAI model.
                         )
                     
                     all_masks = []
-                    if True:  # Всегда добавляем первую маску
+                    if True:  
                         mask = (masks > iou_threshold).float()
                         all_masks.append(mask)
                     
