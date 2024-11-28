@@ -5,6 +5,12 @@ ComfyUI nodes for video object segmentation using [SAMURAI](https://github.com/y
 ## Installation
 
 > **Note:** It is recommended to use Conda environment for installation and running the nodes.
+> Make sure to use the same Conda environment for both ComfyUI and SAMURAI installation!
+> ## Requirements
+- NVIDIA GPU with CUDA support
+- Python 3.10 or higher
+- ComfyUI
+- Conda (recommended) or pip
 
 1. Follow the [SAMURAI installation guide](https://github.com/yangchris11/samurai) to install the base model
 
