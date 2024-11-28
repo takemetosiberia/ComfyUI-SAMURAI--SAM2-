@@ -81,6 +81,6 @@ For more examples and details, see [SAMURAI documentation](https://github.com/ya
 If you encounter any issues:
 1. Make sure you're using the correct Conda environment
 2. Verify that all dependencies are installed in your Conda environment
-3. Check if SAMURAI model is properly installed in the `samurai/` directory
+3. Check if SAMURAI models is properly installed in the `samurai/sam2/checkpoints` directory
 
 For CUDA-related issues, ensure your Conda environment has the correct PyTorch version with CUDA support.
