@@ -46,7 +46,7 @@ ComfyUI/
 Most dependencies are included with SAMURAI installation. Additional required packages:
 
 ```
-pip install hydra-core omegaconf loguru opencv-python-headless>=4.5.0
+pip install hydra-core omegaconf loguru
 ```
 
 ## Usage
