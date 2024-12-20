@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-samurai--sam2-"
+description = "ComfyUI nodes for video object segmentation using [a/SAMURAI](https://github.com/yangchris11/samurai) model."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["loguru", "hydra-core", "omegaconf", "torch>=2.0.0", "torchvision>=0.15.0", "numpy>=1.20.0", "pillow>=8.0.0", "opencv-python>=4.5.0"]
+
+[project.urls]
+Repository = "https://github.com/takemetosiberia/ComfyUI-SAMURAI--SAM2-"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-SAMURAI--SAM2-"
+Icon = ""
